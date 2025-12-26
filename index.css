@@ -1,0 +1,47 @@
+/* 自定义 Tailwind 工具类（兼容非 CDN 环境） */
+.content-auto {
+    content-visibility: auto;
+}
+
+/* 购物车商品入场动画 */
+.cart-item-enter {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 淡入动画定义 */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateX(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+/* 基础样式兼容（可选，补充 Tailwind 未覆盖的样式） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 解决移动端滚动穿透问题（可选） */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* 购物车滚动区域优化 */
+#cartItems {
+    scrollbar-width: thin;
+}
+
+#cartItems::-webkit-scrollbar {
+    width: 4px;
+}
+
+#cartItems::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 2px;
+}
